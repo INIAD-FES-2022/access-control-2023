@@ -35,3 +35,9 @@
   border-bottom-width: 2px;
   transform: translateY(3px);
 }
+@media (min-width: 767px) {
+  .container {
+    padding: 1em;
+    text-align: center;
+  }
+}
