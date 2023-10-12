@@ -1,7 +1,7 @@
 .container {
   position: relative;
   display: block;
-  margin: 10%;
+  margin: 7%;
   color: rgb(0 0 0);
 }
 
@@ -21,7 +21,7 @@
   cursor: pointer;
   background-color: #fff;
   border: none;
-  border-radius: 25px;
+  border-radius: 100px;
   appearance: none;
 }
 

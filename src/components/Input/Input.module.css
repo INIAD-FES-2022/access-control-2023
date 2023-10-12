@@ -1,11 +1,11 @@
 .container {
-  justify-content: center;
+  margin: 7%;
   color: rgb(0 0 0);
 }
 
 .input {
   box-sizing: border-box;
-  width: 50%;
+  width: 60%;
   padding: 10px 15px;
   font-size: 16px;
   border: 2px solid #ddd;
