@@ -6,9 +6,9 @@
   display: block;
   width: 100%;
   padding: 1.2svmin 2svmin;
-  background-color: #fafafa;
+  background-color: #fff;
   border: 0;
-  border: 0.6svmin solid #fff;
+  border: 0.6svmin solid #fafafa;
   border-radius: 1.2svmin;
   box-shadow: 0 0 0 0.1svmin #ccc;
 }
