@@ -34,7 +34,14 @@ type FormData = {
 const isDefined = <T,>(v: T | undefined): v is T => v !== undefined;
 
 export const Register = () => {
-  const [data, setData] = useState<FormData>({});
+  const [data, setData] = useState<FormData>({
+    age: undefined,
+    gender: undefined,
+    occupation: undefined,
+    home: undefined,
+    people: undefined,
+    composition: undefined,
+  });
 
   const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
@@ -46,7 +53,6 @@ export const Register = () => {
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(data);
     const value = e.target.value;
     const name = e.target.name;
     const isNumber = !isNaN(Number(value)) || value === '';
