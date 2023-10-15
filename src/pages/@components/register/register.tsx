@@ -1,4 +1,4 @@
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { useMemo, useState } from 'react';
 import type { UserRequest } from '../../../../api/@types';
 import { Input } from '../../../components/ui/Input/Input';
@@ -33,7 +33,11 @@ type FormData = {
 
 const isDefined = <T,>(v: T | undefined): v is T => v !== undefined;
 
-export const Register = () => {
+export const Register = ({
+  setIsRegistered,
+}: {
+  setIsRegistered: Dispatch<SetStateAction<boolean>>;
+}) => {
   const [data, setData] = useState<FormData>({
     age: undefined,
     gender: undefined,
@@ -78,7 +82,13 @@ export const Register = () => {
       Object.entries(data).filter(([_, v]) => [_, isDefined(v)])
     ) as UserRequest;
 
-    await apiClient.user.$post({ body: definedData });
+    try {
+      await apiClient.user.$post({ body: definedData });
+      setIsRegistered(true);
+    } catch {
+      alert('登録に失敗しました');
+      return;
+    }
   };
 
   return (

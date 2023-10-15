@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { apiClient } from '../utils/apiClient';
 import { Camera } from './@components/camera/camera';
+import { Program } from './@components/program/program';
 import { Register } from './@components/register/register';
 
 const Home = () => {
@@ -23,9 +24,9 @@ const Home = () => {
     })();
   }, [query, router]);
 
-  if (!isRegistered) return <Register />;
+  if (!isRegistered) return <Register setIsRegistered={setIsRegistered} />;
 
-  return query === undefined ? <Camera /> : <div />;
+  return query === undefined ? <Camera /> : <Program programId={query as string} />;
 };
 
 export default Home;
