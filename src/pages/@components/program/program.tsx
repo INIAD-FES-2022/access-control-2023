@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import type { ProgramResponse } from '../../../../api/@types';
 import { apiClient } from '../../../utils/apiClient';
+import styles from './program.module.css';
 
 const Exit = () => {
   const [historyCount, setHistoryCount] = useState(0);
@@ -21,12 +22,12 @@ const Exit = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>赤羽台祭にお越しいただきありがとうございました</h1>
       {historyCount > 4 && (
         <>
-          <p>たくさんの展示をご覧いただきありがとうございます</p>
-          <p>5回以上読み取りいただいたため景品のお菓子がいただけます</p>
+          <p className={styles.text}>たくさんの展示をご覧いただきありがとうございます</p>
+          <p className={styles.text}>5回以上読み取りいただいたため景品のお菓子がいただけます</p>
         </>
       )}
     </div>
@@ -53,9 +54,13 @@ export const Program = ({ programId }: { programId: string }) => {
   if (program?.name === 'program3') return <Exit />;
 
   return (
-    <div>
-      <h1>{program?.name}へ移動しました</h1>
-      <Link href="/">カメラ画面に戻る</Link>
+    <div className={styles.container}>
+      <h1 className={styles.title}>
+        <span>{program?.name}あああ</span>へ移動しました
+      </h1>
+      <Link href="/" className={styles.button}>
+        カメラ画面に戻る
+      </Link>
     </div>
   );
 };

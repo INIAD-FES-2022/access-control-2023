@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100svh;
+  color: #333;
+}
+
+.title {
+  font-weight: normal;
+  letter-spacing: 0.1em;
+}
+
+.title > span {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.button {
+  display: block;
+  padding: 0.8em 1.6em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 0.4em #5556;
+  user-select: none;
+  background-color: #ff9b44;
+  border-radius: 0.4em;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.button:active {
+  background-color: #d17e35;
+}
+
+.text {
+  margin: 0.44em 0 0;
+  font-size: 1.4em;
+}
