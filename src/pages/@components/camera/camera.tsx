@@ -8,7 +8,10 @@ export const Camera = () => {
   const [qrData, setQrData] = useState<string>('');
 
   useEffect(() => {
-    if (qrData.length !== 0) {
+    if (qrData === 'https://track.akabanedai-fes.com/') {
+      alert('そのQRコードは読み取れません');
+      return;
+    } else if (qrData.length !== 0) {
       router.push(qrData);
     }
   }, [qrData, router]);
