@@ -13,6 +13,26 @@ export const Camera = () => {
     }
   }, [qrData, router]);
 
+  if (
+    typeof window !== 'undefined' &&
+    window.navigator !== undefined &&
+    window.navigator.mediaDevices !== undefined &&
+    typeof window.navigator.mediaDevices.getUserMedia === 'function'
+  ) {
+    window.navigator.mediaDevices
+      .getUserMedia({ video: true })
+      .then(function () {
+        // カメラへのアクセスが許可されたときの処理
+        console.log('カメラが利用可能です');
+        // alert('利用可能');
+      })
+      .catch(function (err) {
+        // カメラへのアクセスが拒否されたとき、またはその他のエラー時の処理
+        console.log('カメラにアクセスできません: ', err);
+        // alert('利用不可');
+      });
+  }
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>行動把握システム</h2>
