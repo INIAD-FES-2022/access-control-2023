@@ -52,4 +52,6 @@ export type HistoryResponse = {
   program: ProgramResponse;
 };
 
+export type HistoriesResponse = HistoryResponse[];
+
 export type ProgramsResponse = ProgramResponse[];

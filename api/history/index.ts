@@ -6,6 +6,6 @@ export type Methods = {
   get: {
     status: 200;
     /** ユーザーの参加履歴一覧 */
-    resBody: Types.HistoryResponse;
+    resBody: Types.HistoriesResponse;
   };
 };
