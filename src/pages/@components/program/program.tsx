@@ -56,7 +56,7 @@ export const Program = ({ programId }: { programId: string }) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <span>{program?.name}あああ</span>へ移動しました
+        <span>{program?.name}</span>へ移動しました
       </h1>
       <Link href="/" className={styles.button}>
         カメラ画面に戻る
